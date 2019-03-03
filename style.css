@@ -1,0 +1,121 @@
+body{
+  background-color:rgb(243, 241, 241)!important
+}
+.fa-facebook-square{
+  color:rgb(55, 55, 117)
+}
+.fa-twitter{
+  color: steelblue
+}
+.fa-youtube{
+  color:red
+}
+.fa-google-plus{
+  color:orangered
+}
+.fa-instagram{
+  color:rgb(86, 86, 185)
+}
+.weather-head{
+  color:orangered;
+  background-color:white;
+  padding:2px;
+  margin-bottom:10px;
+  box-shadow:0px 2px 2px rgb(155, 154, 154);
+  border-top:10px solid orangered;
+  clear:bot
+}
+#inputCity{
+  width:100%;
+  height:40px;
+  border:none;
+  box-shadow:1px 1px 2px black;
+  margin-right:0;
+  text-align:center
+}
+time{
+  padding-right:0!important
+}
+.info{
+  background-color:rgb(34, 33, 33);
+  color:orangered;
+  margin-top:10px
+}
+#day1,#day2,#day3,#day4,#day5{
+  color:rgb(21, 135, 143)
+}
+.button{
+  border:none;
+  color:orangered;
+  position:relative!important;
+  top:50px!important
+}
+.panel-body{
+  background-color:rgb(235, 231, 231)
+}
+.panel{
+  box-shadow:1px 1px 5px rgb(119, 117, 117);
+  margin-bottom:-13px!important;
+}
+.social{
+  text-align:center
+}
+.footer{
+  background-color:rgb(34, 33, 33);
+  height:150px
+}
+.fab{
+  z-index:2
+}
+.fab-social{
+  margin-left:15px
+}
+.follow{
+  color:white;
+  text-align:center;
+  padding-top:30px
+}
+.mobile{
+  color:white;
+  text-align:center;
+  padding-bottom:50px
+}
+input:focus{
+  outline:none
+}
+button:focus{
+  outline:none
+}
+#city{
+  color:orangered;
+  font-weight:bolder
+}
+.head{
+  display:inline;
+}
+#currentTime{
+  display:inline;
+  float:right;
+  font-weight: bold
+}
+.search{
+  height:40px;
+  width:100%;
+  margin-left:0;
+  background-color:orangered;
+  border:none;
+  border-radius:5px
+}
+#dateTime{
+  font-weight:bolder
+}
+.search-icon{
+  color:white
+}
+.search:hover{
+  background-color:rgb(255,69,0,0.5);
+}
+.image{
+  width:150px;
+  margin:auto
+}

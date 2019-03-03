@@ -1,0 +1,452 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--font awesome-->
+  <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel = "stylesheet" href = "style.css">
+<!--glyphicon cdn-->
+<link rel = "stylesheet" href = "http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">  
+  <title>Weather</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  
+</head>
+<body>
+    <script src="main.js"></script>
+
+<div class="weather-head">
+<h3 class="head"><i class="fas fa-cloud-sun-rain"></i> WeatherReport</h3>
+<!--<h5 id="currentTime">16:00:00 GMT+1</h5>-->
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-7">
+        <input type="text" name="city" list="cityName" placeholder="Enter City Name" id="inputCity" value="Lagos">
+        <datalist id="cityName">
+          <option value="Lagos"></option>
+          <option value="New York"></option>
+          <option value="Miami"></option>
+          <option value="Florida"></option>
+        </datalist>
+    </div>
+    <div class="col-xs-2">
+      <button class="search"><i class="fa fa-search search-icon"></i></button>
+    </div>
+    <div class="col-xs-2">
+      <h4 id="city">Lagos</h4>
+    </div>
+  </div>
+</div>
+
+<div class="info">
+  <marquee><h5 id = "dateTime" ></h5></marquee>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <h4><b>DAY/TIME</b></h4>
+    </div>
+    <div class="col-xs-4">
+      <h4><b>TEMP</b></h4>
+    </div>
+    <div class="col-xs-4">
+      <h4><b>HUMIDITY</b></h4>
+    </div>
+  </div>
+</div>
+<div class="panel-group" id="accordion">
+  <div class="panel panel-one">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4">
+              <h5 id="day1"><b></b></h5>
+              <!--<h3><i class="fas fa-cloud-moon"></i></h3>-->
+            </div>
+            <div class="col-xs-4">
+              <h4><span id="temp1">--</span><sup>o</sup></h4>
+              <h5 id="desc1">--</h5>
+            </div>
+            <div class="col-xs-2">
+              <h4 id="humidity1">--</h4>
+            </div>
+            <div class="col-xs-1">
+              <button class="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true">-</button>
+            </div>
+          </div>
+        </div>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Temp-max:</b><span id="tempMax1"></span><sup>o</sup></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Rain:</b><span id="rain1"></span></h6>
+            </div>
+          </div>  
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Temp-min:</b><span id="tempMin1"></span><sup>o</sup></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Pressure:</b><span id="pressure1"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Wind speed:</b><span id="windSpeed1"></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Wind deg:</b><span id="windDeg1"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Visibility:</b>1000</h6>
+            </div>
+            <div class="col-xs-6">
+              <h6 id="humidity"><b>Humidity:</b><span id="humid1"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6 id="groundLevel"><b>Ground_level:</b><span id="groundLevel1"></span></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6 id="seaLevel"><b>Sea_level:</b><span id="seaLevel1"></span></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--LINE TWO-->
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-one">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4">
+              <h5 id="day2"><b></b></h5>
+              <!--<h3><i class="fas fa-cloud-moon"></i></h3>-->
+            </div>
+            <div class="col-xs-4">
+              <h4><span id="temp2"></span><sup>o</sup></h4>
+              <h5 id="desc2">--</h5>
+            </div>
+            <div class="col-xs-2">
+              <h4 id="humidity2">--</h4>
+            </div>
+            <div class="col-xs-1">
+              <button class="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false">+</button>
+            </div>
+          </div>
+        </div>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Temp-max:</b><span id="tempMax2"></span><sup>o</sup></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Rain:</b><span id="rain2"></span></h6>
+            </div>
+          </div>  
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Temp-min:</b><span id="tempMin2"></span><sup>o</sup></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Pressure:</b><span id="pressure2"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Wind speed:</b><span id="windSpeed2"></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Wind deg:</b><span id="windDeg2"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Visibility:</b>1000</h6>
+            </div>
+            <div class="col-xs-6">
+              <h6 id="humidity"><b>Humidity:</b><span id="humid2"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6 id="groundLevel"><b>Ground_level:</b><span id="groundLevel2"></span></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6 id="seaLevel"><b>Sea_level:</b><span id="seaLevel2"></span></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--LINE THREE-->
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-one">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4">
+              <h5 id="day3"><b></b></h5>
+            </div>
+            <div class="col-xs-4">
+              <h4><span id="temp3"></span><sup>o</sup></h4>
+              <h5 id="desc3">--</h5>
+            </div>
+            <div class="col-xs-2">
+              <h4 id="humidity3">--</h4>
+            </div>
+            <div class="col-xs-1">
+              <button class="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false">+</button>
+            </div>
+          </div>
+        </div>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Temp-max:</b><span id="tempMax3"></span><sup>o</sup></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Rain:</b><span id="rain3"></span></h6>
+            </div>
+          </div>  
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Temp-min:</b><span id="tempMin3"></span><sup>o</sup></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Pressure:</b><span id="pressure3"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Wind speed:</b><span id="windSpeed3"></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Wind deg:</b><span id="windDeg3"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Visibility:</b>1000</h6>
+            </div>
+            <div class="col-xs-6">
+              <h6 id="humidity"><b>Humidity:</b><span id="humid3"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6 id="groundLevel"><b>Ground_level:</b><span id="groundLevel3"></span></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6 id="seaLevel"><b>Sea_level:</b><span id="seaLevel3"></span></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--LINE FOUR-->
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-one">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4">
+              <h5 id="day4"><b></b></h5>
+            </div>
+            <div class="col-xs-4">
+              <h4><span id="temp4"></span><sup>o</sup></h4>
+              <h5 id="desc4">--</h5>
+            </div>
+            <div class="col-xs-2">
+              <h4 id="humidity4">--</h4>
+            </div>
+            <div class="col-xs-1">
+              <button class="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false">+</button>
+            </div>
+          </div>
+        </div>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Temp-max:</b><span id="tempMax4"></span><sup>o</sup></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Rain:</b><span id="rain4"></span></h6>
+            </div>
+          </div>  
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Temp-min:</b><span id="tempMin4"></span><sup>o</sup></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Pressure:</b><span id="pressure4"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Wind speed:</b><span id="windSpeed4"></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Wind deg:</b><span id="windDeg4"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Visibility:</b>1000</h6>
+            </div>
+            <div class="col-xs-6">
+              <h6 id="humidity"><b>Humidity:</b><span id="humid4"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6 id="groundLevel"><b>Ground_level:</b><span id="groundLevel4"></span></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6 id="seaLevel"><b>Sea_level:</b><span id="seaLevel4"></span></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--LINE FIVE-->
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-one">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4">
+              <h5 id="day5"><b></b></h5>
+            </div>
+            <div class="col-xs-4">
+              <h4><span id="temp5"></span><sup>o</sup></h4>
+              <h5 id="desc5">--</h5>
+            </div>
+            <div class="col-xs-2">
+              <h4 id="humidity5">--</h4>
+            </div>
+            <div class="col-xs-1">
+              <button class="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false">+</button>
+            </div>
+          </div>
+        </div>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Temp-max:</b><span id="tempMax5"></span><sup>o</sup></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Rain:</b><span id="rain5"></span></h6>
+            </div>
+          </div>  
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Temp-min:</b><span id="tempMin5"></span><sup>o</sup></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Pressure:</b><span id="pressure5"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Wind speed:</b><span id="windSpeed5"></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6><b>Wind deg:</b><span id="windDeg5"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6><b>Visibility:</b>1000</h6>
+            </div>
+            <div class="col-xs-6">
+              <h6 id="humidity"><b>Humidity:</b><span id="humid5"></span></h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <h6 id="groundLevel"><b>Ground_level:</b><span id="groundLevel5"></span></h6>
+            </div>
+            <div class="col-xs-6">
+              <h6 id="seaLevel"><b>Sea_level:</b><span id="seaLevel5"></span></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="image">
+<img src="./pictures/googleplay.jpg" width="150px">
+</div>
+
+
+
+
+<div class="footer">
+  <h6 class="follow"><b>FOLLOW US ON</b></h6>
+  <h1 class="social"><i class="fab-social fab fa-facebook-square"></i><i class="fab-social fab fa-twitter"></i><i class="fab-social fab fa-youtube"></i><i class="fab-social fab fa-google-plus"></i><i class="fab-social fab fa-instagram"></i></h1>
+  <h6 class="mobile">Mobile Site Map | Go to Full Site</h6>
+</div>
+
+
+
+</body>
